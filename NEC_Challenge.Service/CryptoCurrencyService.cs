@@ -34,7 +34,6 @@ namespace NEC_Challenge.Service
 
         public async Task<List<CryptoCurrency>> GetCoins()
         {
-            // TODO: Contemplar errores
             var headers = new Dictionary<string, string>{ { ApiKeyName, ApiKey } };
             var parameters = new Dictionary<string, string>{ { "id", string.Join(",", CoinsId) } };
             var cryptosCoins = await HttpService.Get<CryptoCurrencyResponse>(ApiUrl, CryptoCurrencyUrl, headers, parameters);
