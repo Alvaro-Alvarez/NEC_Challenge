@@ -1,0 +1,10 @@
+.container{
+    margin-top: 5%;
+}
+.card-coin{
+    cursor: pointer;
+    transition: transform .2s;
+}
+.card-coin:hover{
+    transform: scale(1.1); 
+}

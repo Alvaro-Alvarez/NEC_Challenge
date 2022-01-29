@@ -1,0 +1,8 @@
+<div class="card">
+    <img [src]="'assets/imgs/' + coin?.symbol +'.png'" class="img-fluid rounded-start" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ coin?.name }}</h5>
+    <p class="card-text">Precio actual: {{ coin?.priceInUsd | currency: ' $USD' }}</p>
+    <p class="card-text"><small class="text-muted">{{ date | date: 'd/M/yy, h:mm a' }}</small></p>
+  </div>
+</div>

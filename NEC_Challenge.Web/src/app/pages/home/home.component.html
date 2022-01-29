@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+        <div *ngFor="let coin of coins" class="col">
+            <div class="card-coin" (click)="openConversion(coin);">
+                <app-coin-card
+                [coin]="coin"
+                [date]="date"
+                ></app-coin-card>
+            </div>
+        </div>
+      </div>
+</div>
+
+<ngx-spinner type="ball-spin-clockwise">
+    <p style="font-size: 20px; color: white">Cargando...</p>
+</ngx-spinner>

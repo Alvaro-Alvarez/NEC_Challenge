@@ -1,0 +1,31 @@
+<div>
+    <div class="modal-header">
+        <label class="title-header">Conversion de Modena: {{ coinToConvert?.name }}</label>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="close();"></button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="conversionForm" (submit)="getConversions();">
+            <br>
+            <app-input-currency
+            [parentForm]="conversionForm"
+            [keyInput]="'value'"
+            [label]="'Monto de ' + coinToConvert?.name + ' a convertir'"
+            [placeholder]="coinToConvert?.name"
+            ></app-input-currency>
+            
+            <button type="submit" class="btn btn-primary btn-custom" [disabled]="conversionForm.invalid">Convertir monedas</button>
+        </form>
+        <div *ngIf="conversion">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4">
+                <div *ngFor="let c of conversion.conversions" class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <span>{{ getNameById(c.currencyId) }}: USD{{ c.convertedAmount | currency: '' }}</span>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+</div>
