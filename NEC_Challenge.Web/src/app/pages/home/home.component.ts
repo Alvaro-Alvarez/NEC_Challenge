@@ -51,10 +51,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     modalRef.componentInstance.coins = this.coins;
     modalRef.componentInstance.coinToConvert = coinToConvert;
   }
-  
+
   startTimerData() {
     this.interval = setInterval(() => {
       this.getCoins(true);
-    }, 10000)
+    }, 5000)
   }
 }
